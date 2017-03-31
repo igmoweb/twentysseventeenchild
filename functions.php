@@ -207,8 +207,7 @@ $paginate_links = paginate_links($pagination_args);
 //Llamar a primera imagen del post del almanaque
 
 function main_image_alma() {
-  $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
-  &post_mime_type=image&order=desc');
+  $files = get_children('post_parent='.get_the_ID().'&post_type=attachment&post_mime_type=image&order=desc');
   if($files) :
 	  $keys = array_reverse(array_keys($files));
 	  $j=0;
