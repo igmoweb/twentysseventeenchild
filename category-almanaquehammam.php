@@ -32,7 +32,7 @@ get_header(); ?>
 		</div>
 	</div>
 	<div class="alm-bg">
-    <div class="scroll-op"></div>
+    <div class="scroll-op">
 		<div class="alm-gradient" style="background-image: url(<?php echo $category_image; ?>)" alt="<?php single_cat_title();?>" desc="<?php echo wp_strip_all_tags( category_description() );?>"/></div>
 		<div class="alm-color"></div>
 	</div>
