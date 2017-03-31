@@ -251,6 +251,3 @@ add_theme_support( 'infinite-scroll', array(
   'container'      => 'infinite-scroll',
   'posts_per_page' => 8,
 ) );
-
-
-?>
