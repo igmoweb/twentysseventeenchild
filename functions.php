@@ -17,7 +17,7 @@ function add_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 function theme_js() {
-	wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . 'assets/js/modernizr.custom.js', array ( 'jquery' ), false, false);
+	wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/assets/js/modernizr.custom.js', array ( 'jquery' ), false, false);
 	wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array ( 'jquery' ), '1.0', true);
 	wp_enqueue_script( 'socialshare', get_stylesheet_directory_uri() . '/assets/js/socialshare.popup.js', array( 'jquery' ), '' , true );
 	wp_enqueue_script( 'hammamnav', get_stylesheet_directory_uri() . '/assets/js/hammam.nav.js', array( 'jquery' ), '1.0', false);
