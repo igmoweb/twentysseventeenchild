@@ -227,8 +227,7 @@ function main_image_alma() {
 //Llamar a primera imagen del post genérico
 
 function main_image() {
-  $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
-  &post_mime_type=image&order=desc');
+  $files = get_children('post_parent='.get_the_ID().'&post_type=attachment&post_mime_type=image&order=desc');
   if($files) :
 	  $keys = array_reverse(array_keys($files));
 	  $j=0;
