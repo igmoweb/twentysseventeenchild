@@ -236,3 +236,12 @@ add_theme_support( 'infinite-scroll', array(
   'container'      => 'infinite-scroll',
   'posts_per_page' => 8,
 ) );
+
+
+function alma_get_clips_query() {
+	$args  = array(
+		'posts_per_page' => 1,
+		'category_name'  => 'almanaquehammam'
+	);
+	return new WP_Query( $args );
+}

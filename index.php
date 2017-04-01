@@ -17,11 +17,8 @@
 
 get_header(); ?>
 
-<?php $args  = array(
-	'posts_per_page' => 1,
-	'category_name'  => 'almanaquehammam'
-);
-$clips_query = new WP_Query( $args );
+<?php $clips_query = alma_get_clips_query();
+
 if ( $clips_query->have_posts() ) {
 	while ( $clips_query->have_posts() ) : $clips_query->the_post();
 		?>
