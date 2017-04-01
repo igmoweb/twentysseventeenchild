@@ -17,47 +17,51 @@
 
 get_header(); ?>
 
-<?php	$args = array(
+<?php $args  = array(
 	'posts_per_page' => 1,
-	'category_name' => 'almanaquehammam'
+	'category_name'  => 'almanaquehammam'
 );
-	$clips_query = new WP_Query( $args );
-	if ( $clips_query->have_posts() ) {
-	while( $clips_query->have_posts() ) : $clips_query->the_post();
-?>
+$clips_query = new WP_Query( $args );
+if ( $clips_query->have_posts() ) {
+	while ( $clips_query->have_posts() ) : $clips_query->the_post();
+		?>
 
-<header class="header-int" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id(), 'featured-huge' ); ?>)">
-	<div class="container">
-		<div class="row">
-			<a href="<?php the_permalink(); ?>"></a>
-			<div class="col-xs-12 text-center">
-				<div class="entry-meta"><h3>Almanaque Hammam</h3></div>
-				<a href="<?php the_permalink(); ?>"><h2><?php the_title();?></h2></a>
+		<header class="header-int" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id(), 'featured-huge' ); ?>)">
+			<div class="container">
+				<div class="row">
+					<a href="<?php the_permalink(); ?>"></a>
+					<div class="col-xs-12 text-center">
+						<div class="entry-meta"><h3>Almanaque Hammam</h3></div>
+						<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+					</div>
+					<?php
+					// Get the ID of a given category
+					$category_id = get_cat_ID( 'Almanaque Hammam' );
+
+					// Get the URL of this category
+					$category_link = get_category_link( $category_id );
+					?>
+					<a href="<?php echo esc_url( $category_link ); ?>" title="Almanaque Hammam">
+						<button>Ir al almanaque</button>
+					</a>
+				</div>
 			</div>
-			<?php
-			    // Get the ID of a given category
-			    $category_id = get_cat_ID( 'Almanaque Hammam' );
+		</header>
 
-			    // Get the URL of this category
-			    $category_link = get_category_link( $category_id );
-			?>
-			<a href="<?php echo esc_url( $category_link ); ?>" title="Almanaque Hammam"><button>Ir al almanaque</button></a>
-		</div>
-	</div>
-</header>
+	<?php endwhile;
+}
+wp_reset_postdata(); ?>
 
-<?php	endwhile;} wp_reset_postdata();?>
-
-<section class="blog">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 blog-content">
-			<?php get_template_part( 'template-parts/home', 'loop' );?>
+	<section class="blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 blog-content">
+					<?php get_template_part( 'template-parts/home', 'loop' ); ?>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<button><a href="#">leer más >></a></button>
+	<button><a href="#">leer más >></a></button>
 
 <?php get_footer();
