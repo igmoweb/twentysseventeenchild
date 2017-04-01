@@ -1,11 +1,4 @@
-<?php
-$paged        = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$custom_args  = array(
-	'post_type'      => 'post',
-	'posts_per_page' => 6,
-	'paged'          => $paged
-);
-$custom_query = new WP_Query( $custom_args ); ?>
+<?php $custom_query = alma_get_home_query(); ?>
 <?php if ( $custom_query->have_posts() ) : ?>
 	<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 		<article class="col-sm-6">
@@ -32,3 +25,4 @@ $custom_query = new WP_Query( $custom_args ); ?>
 		</article>
 	<?php endwhile; ?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
