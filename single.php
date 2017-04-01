@@ -61,7 +61,6 @@ get_header(); ?>
 			</div>
 
 		</div>
-		</div>
 	</section>
 
 <?php else : ?>

@@ -74,7 +74,7 @@ get_header(); ?>
       endif; ?>
       <?php wp_reset_postdata(); ?>
     </div>
-    <?php if (function_exists(custom_pagination)) {
+    <?php if (function_exists('custom_pagination')) {
     custom_pagination($custom_query->max_num_pages,"",$paged);
     } ?>
   </div>
