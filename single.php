@@ -46,7 +46,9 @@ get_header(); ?>
 	<section id="portfolio" class="portfolio-1 bg-lighter portfolio-home related-posts">
 		<div class="container-fluid">
 			<div class="row nopadding" data-scrollreveal="enter bottom over 1s">
-				<?php related_posts() ?>
+				<?php if ( function_exists( 'related_posts' ) ): ?>
+					<?php related_posts() ?>
+				<?php endif; ?>
 
 				<!-- <a href="<?php the_permalink(); ?>" class="portfolio-link">
 										<div class="caption">
