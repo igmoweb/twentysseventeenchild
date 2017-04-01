@@ -16,7 +16,7 @@ $custom_query = new WP_Query( $custom_args ); ?>
 							<?php if ( has_post_thumbnail() ) : ?>
 								<?php the_post_thumbnail( 'featured' ); ?>
 							<?php else : ?>
-								<?php echo main_image(); ?>
+								<?php main_image(); ?>
 							<?php endif; ?>
 						</a>
 					</div><!-- .post-thumbnail -->
