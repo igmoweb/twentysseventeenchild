@@ -247,11 +247,17 @@ function alma_get_clips_query() {
 }
 
 function alma_get_home_query() {
+	// No queremos repetir los posts que salieron en el clips query
+	$clips_query = alma_get_clips_query();
+	$clips_query_posts_ids = wp_list_pluck( $clips_query->get_posts(), 'ID' );
+
 	$paged        = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$args  = array(
 		'post_type'      => 'post',
 		'posts_per_page' => 6,
-		'paged'          => $paged
+		'paged'          => $paged,
+		'post__not_in' => $clips_query_posts_ids
 	);
+
 	return new WP_Query( $args );
 }
