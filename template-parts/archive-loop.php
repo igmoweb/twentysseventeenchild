@@ -10,7 +10,7 @@
 					<?php if ( has_post_thumbnail() ) : ?>
         	<?php the_post_thumbnail('featured'); ?>
     			<?php else : ?>
-						<?php echo main_image('featured');?>
+						<?php echo main_image();?>
 			   <?php endif; ?>
 				</a>
 			</div><!-- .post-thumbnail -->
